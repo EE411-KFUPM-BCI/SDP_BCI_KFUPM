@@ -9,7 +9,7 @@ close all;
 
  
 
-data1 = readtable('C:\Users\abdulrahman\Downloads\data.txt');   % our data
+data1 = readtable('C:\Users\');   % our data
        
 
  
