@@ -44,23 +44,23 @@ while True:
                 break
             if ((samples[0] >=  blink_thres1) & (samples[1] >=  blink_thres1) & (curr_time - time_thres1 > prev_time1)):  # two eye blink 
                 prev_time1 = int(round(time.time() * 1000)) # update time 
-                ser.write(b'O') # no action 
-            elif ((samples[0] >=  flex_thres) & (curr_time - time_thres > prev_time)): # if an EMG spike is detected from the cheek muscles send 'G'
+                ser.write(b'S') # no action 
+            elif ((samples[0] >=  flex_thres) & (curr_time - time_thres > prev_time)):
                 prev_time = int(round(time.time() * 1000)) # update time
-                ser.write(b'G') # left eye ====> 45 degree right
+                ser.write(b'L') # left eye ====> 45 degree right
                 start = time.time()
-            elif((samples[1] >=  flex_thres) & (curr_time - time_thres > prev_time)): # if an EMG spike is detected from the eyebrow muscles send 'R'
+            elif((samples[1] >=  flex_thres) & (curr_time - time_thres > prev_time)): 
                 prev_time = int(round(time.time() * 1000)) # update time
                 ser.write(b'R') # right eye =====> 45 degree right
                 start = time.time()
-            elif((samples[2] >=  flex_thres) & (curr_time - time_thres > prev_time)): # if an EMG spike is detected from the eyebrow muscles send 'Y'
+            elif((samples[2] >=  flex_thres) & (curr_time - time_thres > prev_time)): 
                 prev_time = int(round(time.time() * 1000)) # update time
                 ser.write(b'F') # forward
                 start = time.time()
-            elif((samples[3] >=  flex_thres) & (curr_time - time_thres > prev_time)): # if an EMG spike is detected from the eyebrow muscles send 'Y'\
+            elif((samples[3] >=  flex_thres) & (curr_time - time_thres > prev_time)): 
                 prev_time = int(round(time.time() * 1000)) # update time
                 ser.write(b'F') #Forward
                 start = time.time()
             elif(curr_time - time_thres > prev_time): # if no spike is detected send 'O'
                 prev_time = int(round(time.time() * 1000)) # update time
-                ser.write(b'O')
+                ser.write(b'S')
