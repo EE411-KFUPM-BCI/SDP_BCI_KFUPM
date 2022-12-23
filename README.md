@@ -4,4 +4,6 @@ Open_BCI- Senior project
 # Objective 
 Our objective is to train a neural network to detect Four movement which are Bite , left eye close , right eye close.
 
-# Files
+# EEG files
+Please find the EEG model and data in this link
+https://drive.google.com/drive/folders/18BWm3j8pVb6c275yA69Iin-SgstuFqhZ?usp=share_link
